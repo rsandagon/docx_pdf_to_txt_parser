@@ -27,7 +27,8 @@ class ConvertToTxt():
             info['fileName'] = f
             ftxtName = f.split(".")[0] + ".txt"
             ftxt = codecs.open(ftxtName, 'w+', "utf-8")
-            ftxt.write(self.inputString)
+            trimmed_string = " ".join(self.inputString.split())
+            ftxt.write(trimmed_string)
             ftxt.close()
 
     def readFile(self, fileName):
